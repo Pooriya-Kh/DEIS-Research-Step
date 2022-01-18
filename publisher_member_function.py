@@ -75,6 +75,7 @@ class MinimalPublisher(Node):
         self.publisher_ = self.create_publisher(String, 'building_bot', 10)
         timer_period = 0.05  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
+        # Run the bot as a thread
         MessageLoop(bot, handle).run_as_thread()
         self.old_cmd = ""
 
